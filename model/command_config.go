@@ -122,6 +122,7 @@ func (c *CommandConfig) UpdateImportPath() error {
 	c.ImportPath = importPath
 	// We need the source root determined at this point to check the setversions
 	c.initAppFolder()
+	importPath = c.ImportPath
 	utils.Logger.Info("Returned import path", "path", importPath)
 	if required && c.Index != NEW {
 		if err := c.SetVersions(); err != nil {
